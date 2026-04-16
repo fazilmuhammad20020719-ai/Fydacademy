@@ -50,13 +50,25 @@ const Navbar = () => {
               }`} 
             />
           </Link>
-          <a href="#contact" className="relative text-white text-sm font-semibold hover:text-[#fa4616] transition-all py-2 group">
+          <Link 
+            to="/contact" 
+            className={`relative text-sm font-semibold transition-all py-2 group ${
+              isActive('/contact') ? 'text-[#fa4616]' : 'text-white hover:text-[#fa4616]'
+            }`}
+          >
             Contact
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#fa4616] rounded-full transition-all duration-300 opacity-0 group-hover:w-full group-hover:opacity-50 shadow-[0_0_8px_rgba(250,70,22,0.8)]" />
-          </a>
-          <button className="bg-[#fa4616] text-white px-5 py-2 rounded text-sm font-bold hover:bg-[#d43a12] shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-[#fa4616] focus:ring-opacity-50 active:scale-95">
+            <span 
+              className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-[#fa4616] rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(250,70,22,0.8)] ${
+                isActive('/contact') ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-50'
+              }`} 
+            />
+          </Link>
+          <Link 
+            to="/login"
+            className="bg-[#fa4616] text-white px-5 py-2 rounded text-sm font-bold hover:bg-[#d43a12] shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-[#fa4616] focus:ring-opacity-50 active:scale-95"
+          >
             Login
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

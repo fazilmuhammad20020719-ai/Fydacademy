@@ -127,7 +127,7 @@ export default function CustomCursor() {
           background-color: #fa4616;
           border-radius: 50%;
           pointer-events: none;
-          z-index: 9999;
+          z-index: 100000;
           transform: translate(-50%, -50%);
           transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
         }
@@ -139,7 +139,7 @@ export default function CustomCursor() {
           width: 100vw;
           height: 100vh;
           pointer-events: none;
-          z-index: 9998;
+          z-index: 99999;
           transition: opacity 0.3s ease;
         }
       `}</style>
