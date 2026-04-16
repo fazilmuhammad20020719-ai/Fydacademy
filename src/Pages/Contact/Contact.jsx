@@ -1,9 +1,11 @@
 import React from 'react';
 import Footer from '../../components/Footer';
 
+
 const Contact = () => {
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="relative w-full min-h-screen bg-white">
+
       <main className="pt-32 pb-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           

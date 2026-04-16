@@ -43,7 +43,7 @@ const YouTubeSection = () => {
               href="https://www.youtube.com/@T2Ffilms"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1C619A] font-semibold hover:underline"
+              className="text-[#fa4616] font-semibold hover:underline"
             >
               Channel
             </a>

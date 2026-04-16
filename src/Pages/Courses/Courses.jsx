@@ -2,9 +2,11 @@ import React from 'react';
 import { courses } from '../../data/coursesData';
 import Footer from '../../components/Footer';
 
+
 const Courses = () => {
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="relative w-full min-h-screen bg-white">
+
       <main className="pt-32 pb-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           
@@ -52,7 +54,7 @@ const Courses = () => {
                   <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow line-clamp-3">
                     {course.description}
                   </p>
-                  <button className="self-start bg-[#1C619A] hover:bg-[#154e7d] text-white px-8 py-2.5 rounded text-sm font-bold shadow-md transition-all active:scale-95">
+                  <button className="self-start bg-[#fa4616] hover:bg-[#d43a12] text-white px-8 py-2.5 rounded text-sm font-bold shadow-md transition-all shadow-[#fa4616]/20 active:scale-95">
                     View product
                   </button>
                 </div>

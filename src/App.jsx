@@ -5,13 +5,13 @@ import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register';
 import Navbar from './components/Navbar';
-import CustomCursor from './components/CustomCursor';
+
 
 function App() {
   return (
     <BrowserRouter>
       <div className="relative min-h-screen bg-white flex flex-col font-sans overflow-x-hidden">
-        <CustomCursor />
+
         <Navbar />
         <main className="flex-grow">
           <Routes>

@@ -7,9 +7,11 @@ import YouTubeSection from './Pages/Home/YouTubeSection';
 import JoinCourse from './Pages/Home/JoinCourse';
 import Footer from './components/Footer';
 
+
 const Home = () => {
   return (
-    <div className="w-full">
+    <div className="relative w-full">
+
       <Hero />
       <WhyLearn />
       <CourseSection />
