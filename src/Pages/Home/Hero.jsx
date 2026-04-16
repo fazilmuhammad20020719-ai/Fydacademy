@@ -5,15 +5,16 @@ const Hero = () => {
   return (
     <section className="w-full bg-transparent pt-30 pb-8 flex flex-col items-center justify-center text-center">
 
-      <div className="w-[95%] max-w-7xl mx-auto flex flex-col items-center">
+      {/* Width அதிகரிக்கப்பட்டுள்ளது (w-[98%] max-w-[1400px]) */}
+      <div className="w-[98%] max-w-[1400px] mx-auto flex flex-col items-center">
 
-        {/* Headlines Above the Video Box (Poppins Font added) */}
+        {/* Headlines Above the Video Box */}
         <h2 className="font-['Poppins'] text-4xl md:text-5xl font-medium text-[#0B1B32] tracking-normal mb-8 w-full">
           We provide Premium <span className="text-[#D43A12] font-extrabold italic">"DaVinci Resolve"</span> Training
         </h2>
 
-        {/* Video Box */}
-        <div className="relative w-full mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
+        {/* Video Box - உயரம் மாறாமல் இருக்க நிலையான உயரம் (h-[400px] md:h-[600px]) கொடுக்கப்பட்டுள்ளது */}
+        <div className="relative w-full h-[400px] md:h-[600px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
 
           {/* Background Lines inside video box */}
           <div
@@ -28,9 +29,10 @@ const Hero = () => {
             }}
           />
 
+          {/* Video - h-auto மாற்றி h-full கொடுக்கப்பட்டுள்ளது */}
           <video
             src={heroVideo}
-            className="w-full h-auto object-cover block outline-none relative"
+            className="w-full h-full object-cover block outline-none relative"
             style={{ zIndex: 10 }}
             controls
             autoPlay
