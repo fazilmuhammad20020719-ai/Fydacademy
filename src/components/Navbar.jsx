@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo part */}
         <Link to="/" className="flex items-center cursor-pointer">
-          <img src={logo} alt="T2F Logo" className="h-10 w-auto transform scale-[2] origin-left" />
+          <img src={logo} alt="FYD Academy Logo" className="h-10 w-auto transform scale-[2] origin-left" />
         </Link>
 
         {/* Nav Links & Login Button */}
@@ -34,6 +34,19 @@ const Navbar = () => {
             <span 
               className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-[#fa4616] rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(250,70,22,0.8)] ${
                 isActive('/') ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-50'
+              }`} 
+            />
+          </Link>
+          <Link 
+            to="/curriculum" 
+            className={`relative text-sm font-semibold transition-all py-2 group ${
+              isActive('/curriculum') ? 'text-[#fa4616]' : 'text-white hover:text-[#fa4616]'
+            }`}
+          >
+            Curriculum
+            <span 
+              className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-[#fa4616] rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(250,70,22,0.8)] ${
+                isActive('/curriculum') ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-50'
               }`} 
             />
           </Link>

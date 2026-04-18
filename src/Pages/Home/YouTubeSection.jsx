@@ -82,7 +82,7 @@ const YouTubeSection = () => {
                 <p className="text-sm font-semibold text-[#0B1B32] truncate group-hover:text-[#fa4616] transition-colors">
                   {video.title}
                 </p>
-                <p className="text-xs text-gray-400 mt-0.5">Team 2 Films</p>
+                <p className="text-xs text-gray-400 mt-0.5">FYD Academy</p>
               </div>
             </a>
           ))}

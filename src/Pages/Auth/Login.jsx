@@ -14,7 +14,7 @@ const Login = () => {
           <img
             className="h-12 w-auto transform scale-[2]"
             src={logo}
-            alt="Fyd Academy"
+            alt="FYD Academy"
           />
         </Link>
         <h2 className="text-center text-3xl font-extrabold text-[#0B1B32] tracking-tight">

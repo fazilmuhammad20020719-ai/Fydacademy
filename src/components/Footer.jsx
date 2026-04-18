@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-8 order-2 md:order-1">
           <div className="flex flex-col space-y-2">
             <h3 className="text-white font-bold text-lg">
-              Copyright Team 2 Films © 2024
+              Copyright FYD Academy © 2024
             </h3>
             <div className="flex items-center space-x-6">
               <a href="#contact" className="text-white hover:text-[#fa4616] transition-colors font-medium">

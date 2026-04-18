@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CourseSection = () => {
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    navigate('/checkout');
+  };
   return (
     <section className="w-full bg-white py-16 md:py-24">
       <div className="w-[95%] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -21,7 +27,7 @@ const CourseSection = () => {
              </div>
              {/* Text */}
              <div className="flex flex-col text-left">
-                <span className="text-gray-400 text-[10px] tracking-widest uppercase mb-1">Team 2 Films</span>
+                <span className="text-gray-400 text-[10px] tracking-widest uppercase mb-1">FYD Academy</span>
                 <span className="text-white text-2xl font-bold leading-none tracking-tight mb-1">DaVinci <br /> Resolve</span>
                 <span className="text-gray-300 text-sm font-light">for Editors</span>
              </div>
@@ -50,7 +56,10 @@ const CourseSection = () => {
           </p>
           
           <div className="flex flex-wrap items-center gap-4">
-            <button className="bg-[#fa4616] hover:bg-[#d43a12] text-white px-7 py-3 rounded text-sm font-bold shadow-lg shadow-[#fa4616]/20 transition-all focus:outline-none focus:ring-2 focus:ring-[#fa4616] focus:ring-opacity-50">
+            <button 
+              onClick={handleBuyNow}
+              className="bg-[#fa4616] hover:bg-[#d43a12] text-white px-7 py-3 rounded text-sm font-bold shadow-lg shadow-[#fa4616]/20 transition-all focus:outline-none focus:ring-2 focus:ring-[#fa4616] focus:ring-opacity-50 active:scale-95"
+            >
               Buy now
             </button>
             <button className="bg-[#fa4616] hover:bg-[#d43a12] text-white px-7 py-3 rounded text-sm font-bold shadow-lg shadow-[#fa4616]/20 transition-all focus:outline-none focus:ring-2 focus:ring-[#fa4616] focus:ring-opacity-50">

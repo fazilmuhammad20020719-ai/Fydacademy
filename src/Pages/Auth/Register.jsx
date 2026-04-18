@@ -14,7 +14,7 @@ const Register = () => {
           <img
             className="h-12 w-auto transform scale-[2]"
             src={logo}
-            alt="Fyd Academy"
+            alt="FYD Academy"
           />
         </Link>
         <h2 className="text-center text-3xl font-extrabold text-[#0B1B32] tracking-tight">
@@ -150,7 +150,7 @@ const Register = () => {
 
           <div className="mt-8 text-center">
             <p className="text-xs text-gray-400 italic">
-              Join 10,000+ professionals mastering DaVinci Resolve at Fyd Academy.
+              Join 10,000+ professionals mastering DaVinci Resolve at FYD Academy.
             </p>
           </div>
         </div>

@@ -4,6 +4,8 @@ import Courses from './Pages/Courses/Courses';
 import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register';
+import Checkout from './Pages/Checkout/Checkout';
+import Curriculum from './Pages/Curriculum/Curriculum';
 import Navbar from './components/Navbar';
 
 
@@ -20,6 +22,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/curriculum" element={<Curriculum />} />
           </Routes>
         </main>
       </div>
