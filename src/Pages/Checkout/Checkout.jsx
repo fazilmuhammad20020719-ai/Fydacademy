@@ -11,7 +11,7 @@ const Checkout = () => {
   // Mock course data
   const course = {
     title: 'DaVinci Resolve for Editors',
-    price: 275,
+    price: 82500,
     image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
   };
 
@@ -252,7 +252,7 @@ const Checkout = () => {
                     <div>
                       <span className="text-[10px] text-[#fa4616] font-black uppercase tracking-[0.2em] leading-none transition-colors">Your Selection</span>
                       <h3 className="text-lg font-black text-zinc-900 dark:text-white mt-1.5 leading-tight tracking-tight transition-colors">{course.title}</h3>
-                      <p className="text-xl font-black text-[#fa4616] mt-2 transition-colors">${course.price}</p>
+                      <p className="text-xl font-black text-[#fa4616] mt-2 transition-colors">{course.price.toLocaleString()} LKR</p>
                     </div>
                   </div>
 
@@ -270,13 +270,13 @@ const Checkout = () => {
                   <div className="space-y-4 mb-10">
                     <div className="flex justify-between text-sm font-medium">
                       <span className="text-zinc-500">Subtotal</span>
-                      <span className="text-zinc-900 dark:text-white transition-colors">${course.price.toFixed(2)}</span>
+                      <span className="text-zinc-900 dark:text-white transition-colors">{course.price.toLocaleString()} LKR</span>
                     </div>
                     <div className="flex justify-between items-center text-xl font-black text-zinc-900 dark:text-white pt-6 border-t border-zinc-200 dark:border-white/5 transition-colors">
                       <span>Total Due</span>
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] bg-[#fa4616]/10 text-[#fa4616] px-2 py-1 rounded font-black tracking-widest">USD</span>
-                        <span>${course.price.toFixed(2)}</span>
+                        <span className="text-[10px] bg-[#fa4616]/10 text-[#fa4616] px-2 py-1 rounded font-black tracking-widest">LKR</span>
+                        <span>{course.price.toLocaleString()}</span>
                       </div>
                     </div>
                   </div>

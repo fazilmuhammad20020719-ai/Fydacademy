@@ -51,8 +51,8 @@ const CourseSection = () => {
               Limited Time Offer
             </span>
             <div className="flex items-center gap-4">
-              <span className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white transition-colors">$275</span>
-              <span className="text-zinc-400 dark:text-zinc-600 line-through text-xl md:text-2xl font-bold decoration-[#fa4616]/40 transition-colors">$439</span>
+              <span className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white transition-colors">82,500 LKR</span>
+              <span className="text-zinc-400 dark:text-zinc-600 line-through text-xl md:text-2xl font-bold decoration-[#fa4616]/40 transition-colors">131,700 LKR</span>
             </div>
           </div>
 

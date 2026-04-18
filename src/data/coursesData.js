@@ -21,8 +21,8 @@ export const courses = [
     metadata: 'Course • 57 Lessons',
     description: 'The most comprehensive and professional course for editors moving to DaVinci Resolve. This course has been specifically tailored to professional editors with experience using Premiere Pro.',
     image: 'https://placehold.co/600x400/0B1B32/white?text=DaVinci+Resolve+for+Editors',
-    price: '$275',
-    oldPrice: '$439',
+    price: '82,500 LKR',
+    oldPrice: '131,700 LKR',
   },
   {
     id: 'fx9-vs-burano-files',
@@ -62,7 +62,7 @@ export const courses = [
     metadata: 'Course • 45 Lessons',
     description: 'Master the art of professional color grading. Learn advanced techniques for matching cameras, creating cinematic looks, and efficient workflows.',
     image: 'https://placehold.co/600x400/0B1B32/white?text=Advanced+Color+Grading',
-    price: '$199',
+    price: '59,700 LKR',
   },
   {
     id: 'fusion-titling-masterclass',
@@ -78,6 +78,6 @@ export const courses = [
     metadata: 'Course • 30 Lessons',
     description: 'Unlock the power of the Fairlight page. Learn professional audio post-production, mixing, and cinematic sound design techniques in DaVinci Resolve.',
     image: 'https://placehold.co/600x400/0B1B32/white?text=Fairlight+Audio',
-    price: '$149',
+    price: '44,700 LKR',
   },
 ];
