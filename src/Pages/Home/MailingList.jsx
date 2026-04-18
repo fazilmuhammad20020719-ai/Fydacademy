@@ -1,44 +1,57 @@
 import React from 'react';
 
+import { useTheme } from '../../context/ThemeContext';
+
 const MailingList = () => {
+  const { theme } = useTheme();
   return (
-    <section className="w-full bg-white">
-      <div 
-        className="w-full backdrop-blur-xl py-12 px-6 md:px-12"
+    <section className="relative w-full bg-white dark:bg-black overflow-hidden transition-colors duration-300">
+      <div
+        className="relative w-full py-20 px-6 md:px-12 backdrop-blur-3xl border-y border-zinc-200 dark:border-white/5 shadow-2xl transition-all duration-300"
         style={{
-          background: 'linear-gradient(135deg, rgba(250,70,22,0.18) 0%, rgba(20,10,5,0.85) 60%, rgba(250,70,22,0.15) 100%)',
-          borderTop: '1px solid rgba(250,70,22,0.3)',
-          borderBottom: '1px solid rgba(250,70,22,0.3)',
+          background: theme === 'dark'
+            ? 'linear-gradient(135deg, rgba(250,70,22,0.1) 0%, rgba(5,5,5,1) 50%, rgba(250,70,22,0.05) 100%)'
+            : 'linear-gradient(135deg, rgba(250,70,22,0.05) 0%, rgba(255,255,255,1) 50%, rgba(250,70,22,0.02) 100%)',
         }}
       >
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
-        
-        {/* Text Content */}
-        <div className="flex flex-col text-left w-full lg:w-auto">
-          <h2 className="text-2xl md:text-[1.8rem] font-bold text-white tracking-tight mb-1">
-            Join our mailing list
-          </h2>
-          <p className="text-white/80 text-[15px]">
-            Sign Up to be notified of future training
-          </p>
-        </div>
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-[#fa4616]/5 blur-[100px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#ff8c00]/5 blur-[100px] rounded-full" />
 
-        {/* Input Form */}
-        <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-3">
-          <input 
-            type="text" 
-            placeholder="Name" 
-            className="px-5 py-3.5 rounded-xl border border-white/10 outline-none w-full sm:w-48 text-sm bg-white/10 text-white placeholder-white/40 focus:ring-2 focus:ring-[#fa4616]/50 transition-all"
-          />
-          <input 
-            type="email" 
-            placeholder="Email" 
-            className="px-5 py-3.5 rounded-xl border border-white/10 outline-none w-full sm:w-64 text-sm bg-white/10 text-white placeholder-white/40 focus:ring-2 focus:ring-[#fa4616]/50 transition-all"
-          />
-          <button className="bg-[#fa4616] hover:bg-[#d43a12] text-white px-10 py-3.5 rounded-xl text-sm font-bold shadow-lg hover:shadow-[#fa4616]/20 transition-all whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white/20">
-            Subscribe
-          </button>
-        </div>
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12 relative z-10">
+
+          {/* Text Content */}
+          <div className="flex flex-col text-center lg:text-left space-y-2">
+            <span className="text-[#fa4616] text-[10px] font-black uppercase tracking-[0.3em] mb-1">Stay Updated</span>
+            <h2 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tighter leading-tight transition-colors">
+              Join the <span className="text-[#fa4616]">Circle</span>
+            </h2>
+            <p className="text-zinc-600 dark:text-zinc-400 font-medium text-lg transition-colors">
+              Be the first to know about new workshops and tool releases.
+            </p>
+          </div>
+
+          {/* Input Form */}
+          <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-4">
+            <div className="relative group flex-1 sm:flex-none">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="px-6 py-4.5 rounded-[1.5rem] border border-zinc-200 dark:border-white/10 outline-none w-full sm:w-56 bg-white dark:bg-zinc-900/50 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-600 focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium"
+              />
+            </div>
+            <div className="relative group flex-1 sm:flex-none">
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="px-6 py-4.5 rounded-[1.5rem] border border-zinc-200 dark:border-white/10 outline-none w-full sm:w-72 bg-white dark:bg-zinc-900/50 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-600 focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium"
+              />
+            </div>
+            <button className="group relative overflow-hidden bg-[#fa4616] text-white px-10 py-4.5 rounded-[1.5rem] font-black text-sm shadow-xl hover:bg-[#d43a12] active:scale-95 transition-all">
+              <span className="relative z-10">Subscribe Now</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:animate-shimmer" />
+            </button>
+          </div>
 
         </div>
       </div>

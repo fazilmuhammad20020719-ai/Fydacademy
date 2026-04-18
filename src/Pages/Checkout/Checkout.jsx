@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer';
+import BackgroundLines from '../../components/BackgroundLines';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -16,33 +17,51 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 pt-24 pb-20 px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-2xl font-bold text-[#0B1B32] mb-8">Checkout</h1>
+      <div className="min-h-screen bg-white dark:bg-black pt-24 pb-20 px-4 md:px-8 relative overflow-hidden transition-colors duration-300">
+        <BackgroundLines />
+        {/* Glows */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#fa4616]/5 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#fa4616]/5 blur-[120px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tighter transition-colors">
+              Verify <span className="text-[#fa4616]">Checkout</span>
+            </h1>
+            <div className="w-20 h-1.5 bg-[#fa4616] mt-4 rounded-full" />
+          </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
-            
+
             {/* Left Column: Form Sections */}
             <div className="flex-grow space-y-6">
-              
+
               {/* 1. Contact Info Section */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-lg font-bold text-[#0B1B32]">Contact Info</h2>
-                  <button className="text-sm font-medium text-gray-400 hover:text-gray-600">Logout</button>
+              <div className="bg-white dark:bg-zinc-900/30 backdrop-blur-xl rounded-3xl shadow-2xl border border-zinc-200 dark:border-white/5 p-8 group transition-all duration-300">
+                <div className="flex justify-between items-center mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#fa4616]/10 border border-[#fa4616]/20 flex items-center justify-center text-[#fa4616] text-xs font-black transition-colors">01</div>
+                    <h2 className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight transition-colors">Contact Info</h2>
+                  </div>
+                  <button className="text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-[#fa4616] transition-colors">Logout</button>
                 </div>
-                <p className="text-gray-600">fazilmuhammad@gmail.com</p>
+                <div className="pl-11">
+                  <p className="text-zinc-600 dark:text-zinc-300 font-medium transition-colors">fazilmuhammad@gmail.com</p>
+                </div>
               </div>
 
               {/* 2. Billing Section */}
-              <div className={`bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-300 ${activeStep === 1 ? 'ring-2 ring-[#fa4616]/20' : ''}`}>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-lg font-bold text-[#0B1B32]">Billing</h2>
+              <div className={`bg-white dark:bg-zinc-900/30 backdrop-blur-xl rounded-3xl shadow-2xl border border-zinc-200 dark:border-white/5 transition-all duration-500 ${activeStep === 1 ? 'ring-2 ring-[#fa4616]/50 border-transparent shadow-[#fa4616]/5' : ''}`}>
+                <div className="p-8">
+                  <div className="flex justify-between items-center mb-8">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black transition-colors ${activeStep >= 1 ? 'bg-[#fa4616] text-white' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 transition-colors'}`}>02</div>
+                      <h2 className={`text-xl font-bold tracking-tight transition-colors ${activeStep >= 1 ? 'text-zinc-900 dark:text-white' : 'text-zinc-400 dark:text-zinc-600'}`}>Billing</h2>
+                    </div>
                     {activeStep > 1 && (
-                      <button 
+                      <button
                         onClick={() => setActiveStep(1)}
-                        className="text-sm font-bold text-[#fa4616] hover:text-[#d43a12]"
+                        className="text-xs font-black uppercase tracking-widest text-[#fa4616] hover:text-[#ff8c00]"
                       >
                         Edit
                       </button>
@@ -50,11 +69,11 @@ const Checkout = () => {
                   </div>
 
                   {activeStep === 1 ? (
-                    <div className="space-y-6">
+                    <div className="space-y-8 pl-11">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="flex flex-col space-y-2">
-                          <label className="text-sm font-bold text-[#0B1B32]">Country</label>
-                          <select className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all">
+                          <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Country</label>
+                          <select className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium appearance-none">
                             <option>Sri Lanka</option>
                             <option>United States</option>
                             <option>United Kingdom</option>
@@ -62,123 +81,144 @@ const Checkout = () => {
                           </select>
                         </div>
                         <div className="flex flex-col space-y-2">
-                          <label className="text-sm font-bold text-[#0B1B32]">State</label>
-                          <input type="text" className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all" />
+                          <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">State</label>
+                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
                         </div>
                         <div className="flex flex-col space-y-2">
-                          <label className="text-sm font-bold text-[#0B1B32]">Postal Code</label>
-                          <input type="text" className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all" />
+                          <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Postal Code</label>
+                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="flex flex-col space-y-2 md:col-span-1">
-                          <label className="text-sm font-bold text-[#0B1B32]">City</label>
-                          <input type="text" className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all" />
+                        <div className="flex flex-col space-y-2">
+                          <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">City</label>
+                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
                         </div>
-                        <div className="flex flex-col space-y-2 md:col-span-1">
-                          <label className="text-sm font-bold text-[#0B1B32]">Address 1</label>
-                          <input type="text" className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all" />
+                        <div className="flex flex-col space-y-2">
+                          <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Address 1</label>
+                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
                         </div>
-                        <div className="flex flex-col space-y-2 md:col-span-1">
-                          <label className="text-sm font-bold text-[#0B1B32]">Address 2</label>
-                          <input type="text" className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all" />
+                        <div className="flex flex-col space-y-2">
+                          <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Address 2</label>
+                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
                         </div>
                       </div>
 
-                      <div>
-                        <button 
+                      <div className="pt-2">
+                        <button
                           onClick={() => setShowBusinessDetails(!showBusinessDetails)}
-                          className="text-sm font-medium text-[#fa4616] hover:underline"
+                          className="text-xs font-black uppercase tracking-[0.2em] text-[#fa4616] hover:text-[#ff8c00] flex items-center gap-2"
                         >
-                          {showBusinessDetails ? '- Hide business details' : '+ Add business details'}
+                          <span className="text-lg leading-none">{showBusinessDetails ? '−' : '+'}</span>
+                          {showBusinessDetails ? 'Hide business details' : 'Add business details'}
                         </button>
                         {showBusinessDetails && (
-                          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2">
+                          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-4 duration-500">
                             <div className="flex flex-col space-y-2">
-                              <label className="text-sm font-bold text-[#0B1B32]">Business Name</label>
-                              <input type="text" className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all" />
+                              <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Business Name</label>
+                              <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
                             </div>
                             <div className="flex flex-col space-y-2">
-                              <label className="text-sm font-bold text-[#0B1B32]">VAT / Tax ID</label>
-                              <input type="text" className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#fa4616] transition-all" />
+                              <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">VAT / Tax ID</label>
+                              <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
                             </div>
                           </div>
                         )}
                       </div>
 
-                      <div className="pt-6 border-t border-gray-100 flex justify-end">
-                        <button 
+                      <div className="pt-8 border-t border-white/5 flex justify-end">
+                        <button
                           onClick={() => setActiveStep(2)}
-                          className="bg-[#fa4616] hover:bg-[#d43a12] text-white px-8 py-3 rounded-lg font-bold transition-all active:scale-95 shadow-lg shadow-[#fa4616]/20"
+                          className="group relative overflow-hidden bg-[#fa4616] hover:bg-[#d43a12] text-white px-10 py-4.5 rounded-[1.5rem] font-black text-sm transition-all active:scale-95 shadow-2xl shadow-[#fa4616]/20"
                         >
-                          Save & Continue
+                          <span className="relative z-10 flex items-center gap-2">
+                            Save & Continue
+                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                          </span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:animate-shimmer" />
                         </button>
                       </div>
                     </div>
                   ) : (
-                    <p className="text-sm text-gray-500 italic">Billing information saved.</p>
+                    <div className="pl-11">
+                      <p className="text-zinc-500 text-sm font-medium italic">Billing details confirmed.</p>
+                    </div>
                   )}
                 </div>
               </div>
 
               {/* 3. Payment Section */}
-              <div className={`bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-300 ${activeStep === 2 ? 'ring-2 ring-[#fa4616]/20' : ''}`}>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h2 className={`text-lg font-bold ${activeStep === 2 ? 'text-[#0B1B32]' : 'text-gray-300'}`}>Payment</h2>
+              <div className={`bg-white dark:bg-zinc-900/30 backdrop-blur-xl rounded-3xl shadow-2xl border border-zinc-200 dark:border-white/5 transition-all duration-500 ${activeStep === 2 ? 'ring-2 ring-[#fa4616]/50 border-transparent shadow-[#fa4616]/5' : ''}`}>
+                <div className="p-8">
+                  <div className="flex justify-between items-center mb-8">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black transition-colors ${activeStep === 2 ? 'bg-[#fa4616] text-white' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 transition-colors'}`}>03</div>
+                      <h2 className={`text-xl font-bold tracking-tight transition-colors ${activeStep === 2 ? 'text-zinc-900 dark:text-white' : 'text-zinc-400 dark:text-zinc-600'}`}>Payment</h2>
+                    </div>
                   </div>
                   {activeStep === 2 ? (
-                    <div className="space-y-8 py-4 animate-in fade-in slide-in-from-top-2">
+                    <div className="space-y-10 pl-11 animate-in fade-in slide-in-from-top-4 duration-700">
                       {/* Payment Method Selector */}
-                      <div className="flex items-center gap-8 px-2">
-                        <label className="flex items-center gap-3 cursor-pointer group">
-                          <input type="radio" name="payment" defaultChecked className="w-5 h-5 border-gray-300 text-[#0B1B32] focus:ring-[#0B1B32] cursor-pointer" />
-                          <span className="text-base font-medium text-gray-700 group-hover:text-[#0B1B32] transition-colors">Credit or Debit</span>
+                      <div className="flex items-center gap-10">
+                        <label className="flex items-center gap-4 cursor-pointer group">
+                          <div className="relative flex items-center justify-center">
+                            <input type="radio" name="payment" defaultChecked className="peer opacity-0 absolute w-6 h-6 cursor-pointer" />
+                            <div className="w-6 h-6 rounded-full border-2 border-zinc-700 peer-checked:border-[#fa4616] flex items-center justify-center transition-all">
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#fa4616] opacity-0 peer-checked:opacity-100 transition-all scale-0 peer-checked:scale-100" />
+                            </div>
+                          </div>
+                          <span className="text-base font-bold text-zinc-400 group-hover:text-white transition-colors">Credit or Debit</span>
                         </label>
-                        <label className="flex items-center gap-3 cursor-pointer group">
-                          <input type="radio" name="payment" className="w-5 h-5 border-gray-300 text-[#0B1B32] focus:ring-[#0B1B32] cursor-pointer" />
-                          <span className="text-base font-medium text-gray-700 group-hover:text-[#0B1B32] transition-colors">PayPal</span>
+                        <label className="flex items-center gap-4 cursor-pointer group">
+                          <div className="relative flex items-center justify-center">
+                            <input type="radio" name="payment" className="peer opacity-0 absolute w-6 h-6 cursor-pointer" />
+                            <div className="w-6 h-6 rounded-full border-2 border-zinc-700 peer-checked:border-[#fa4616] flex items-center justify-center transition-all">
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#fa4616] opacity-0 peer-checked:opacity-100 transition-all scale-0 peer-checked:scale-100" />
+                            </div>
+                          </div>
+                          <span className="text-base font-bold text-zinc-400 group-hover:text-white transition-colors">PayPal</span>
                         </label>
                       </div>
 
                       {/* Card Details Form */}
-                      <div className="space-y-6">
+                      <div className="space-y-8">
                         <div className="flex flex-col space-y-2">
-                          <label className="text-sm font-bold text-[#0B1B32]">Card number</label>
+                          <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Card number</label>
                           <div className="relative">
-                            <input 
-                              type="text" 
-                              placeholder="1234 1234 1234 1234" 
-                              className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-[#fa4616]/20 focus:border-[#fa4616] transition-all pr-32" 
+                            <input
+                              type="text"
+                              placeholder="1234 1234 1234 1234"
+                              className="w-full bg-white border border-zinc-200 rounded-2xl px-6 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 focus:border-transparent transition-all font-medium pr-32 placeholder-zinc-400"
                             />
-                            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 opacity-60">
+                            <div className="absolute right-5 top-1/2 -translate-y-1/2 flex items-center gap-3 grayscale opacity-40">
                               <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 w-auto" />
                               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-6 w-auto" />
                               <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="Amex" className="h-5 w-auto" />
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Discover_Card_logo.svg" alt="Discover" className="h-3 w-auto" />
                             </div>
                           </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-2 gap-8">
                           <div className="flex flex-col space-y-2">
-                            <label className="text-sm font-bold text-[#0B1B32]">Expiration date</label>
-                            <input 
-                              type="text" 
-                              placeholder="MM / YY" 
-                              className="bg-white border border-gray-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-[#fa4616]/20 focus:border-[#fa4616] transition-all" 
+                            <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Expiration date</label>
+                            <input
+                              type="text"
+                              placeholder="MM / YY"
+                              className="bg-white border border-zinc-200 rounded-2xl px-6 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 focus:border-transparent transition-all font-medium placeholder-zinc-400"
                             />
                           </div>
                           <div className="flex flex-col space-y-2">
-                            <label className="text-sm font-bold text-[#0B1B32]">Security code</label>
+                            <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Security code</label>
                             <div className="relative">
-                              <input 
-                                type="text" 
-                                placeholder="CVC" 
-                                className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-[#fa4616]/20 focus:border-[#fa4616] transition-all pr-12" 
+                              <input
+                                type="text"
+                                placeholder="CVC"
+                                className="w-full bg-white border border-zinc-200 rounded-2xl px-6 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 focus:border-transparent transition-all font-medium pr-12 placeholder-zinc-400"
                               />
-                              <div className="absolute right-3 top-1/2 -translate-y-1/2 opacity-30">
+                              <div className="absolute right-5 top-1/2 -translate-y-1/2 text-zinc-600">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                                 </svg>
@@ -189,7 +229,9 @@ const Checkout = () => {
                       </div>
                     </div>
                   ) : (
-                    <p className="text-sm text-gray-400">Complete billing to proceed to payment.</p>
+                    <div className="pl-11">
+                      <p className="text-zinc-600 text-sm font-medium">Complete billing to proceed to payment.</p>
+                    </div>
                   )}
                 </div>
               </div>
@@ -197,73 +239,81 @@ const Checkout = () => {
             </div>
 
             {/* Right Column: Order Summary */}
-            <div className="w-full lg:w-96 shrink-0">
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 sticky top-24">
-                <div className="flex items-start gap-4 mb-8">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 border border-gray-100">
-                    <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest leading-none">Course</span>
-                    <h3 className="text-sm font-bold text-[#0B1B32] mt-1 leading-tight">{course.title}</h3>
-                    <p className="text-sm font-bold text-[#0B1B32] mt-1">${course.price}</p>
-                  </div>
-                </div>
+            <div className="w-full lg:w-96 shrink-0 relative">
+              <div className="bg-white dark:bg-zinc-900/30 backdrop-blur-3xl rounded-[2.5rem] shadow-2xl border border-zinc-200 dark:border-white/5 p-10 lg:sticky lg:top-24 group transition-colors duration-300">
+                {/* Backdrop Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#fa4616]/5 to-transparent rounded-[2.5rem] transition-opacity group-hover:opacity-100 opacity-60 pointer-events-none" />
 
-                <div className="flex gap-2 mb-8">
-                  <input 
-                    type="text" 
-                    placeholder="Discount code" 
-                    className="flex-grow bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-[#fa4616] transition-all"
-                  />
-                  <button className="px-4 py-2 text-sm font-bold text-gray-300 bg-gray-50 border border-gray-200 rounded-lg cursor-not-allowed">
-                    Apply
+                <div className="relative z-10">
+                  <div className="flex items-start gap-4 mb-10">
+                    <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border border-white/10 p-0.5 bg-zinc-800">
+                      <img src={course.image} alt={course.title} className="w-full h-full object-cover rounded-[calc(1rem-2px)] grayscale-[0.2]" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-[#fa4616] font-black uppercase tracking-[0.2em] leading-none transition-colors">Your Selection</span>
+                      <h3 className="text-lg font-black text-zinc-900 dark:text-white mt-1.5 leading-tight tracking-tight transition-colors">{course.title}</h3>
+                      <p className="text-xl font-black text-[#fa4616] mt-2 transition-colors">${course.price}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 mb-10">
+                    <input
+                      type="text"
+                      placeholder="Discount code"
+                      className="flex-grow bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-sm text-black outline-none focus:ring-2 focus:ring-[#fa4616]/30 transition-all font-medium placeholder-zinc-400"
+                    />
+                    <button className="px-6 py-4 text-xs font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-600 bg-zinc-100 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/5 rounded-2xl cursor-not-allowed transition-colors">
+                      Apply
+                    </button>
+                  </div>
+
+                  <div className="space-y-4 mb-10">
+                    <div className="flex justify-between text-sm font-medium">
+                      <span className="text-zinc-500">Subtotal</span>
+                      <span className="text-zinc-900 dark:text-white transition-colors">${course.price.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-xl font-black text-zinc-900 dark:text-white pt-6 border-t border-zinc-200 dark:border-white/5 transition-colors">
+                      <span>Total Due</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] bg-[#fa4616]/10 text-[#fa4616] px-2 py-1 rounded font-black tracking-widest">USD</span>
+                        <span>${course.price.toFixed(2)}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    disabled={activeStep !== 2}
+                    onClick={() => alert('Purchase successful!')}
+                    className={`group relative overflow-hidden w-full py-5 rounded-2xl font-black text-lg transition-all active:scale-95 shadow-2xl ${activeStep === 2
+                      ? 'bg-[#fa4616] text-white shadow-[#fa4616]/20 hover:bg-[#d43a12]'
+                      : 'bg-zinc-800 text-zinc-600 cursor-not-allowed border border-white/5'
+                      }`}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      Complete Payment
+                      {activeStep === 2 && (
+                        <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      )}
+                    </span>
+                    {activeStep === 2 && <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:animate-shimmer" />}
                   </button>
+
+                  <p className="mt-8 text-[10px] text-zinc-600 text-center leading-relaxed font-bold uppercase tracking-widest">
+                    Secured by FYD Academy Encryption<br />
+                    <a href="#" className="text-zinc-500 hover:text-[#fa4616] transition-colors">Terms</a> • <a href="#" className="text-zinc-500 hover:text-[#fa4616] transition-colors">Privacy</a>
+                  </p>
                 </div>
-
-                <div className="space-y-3 mb-8">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Subtotal</span>
-                    <span className="text-[#0B1B32] font-medium">${course.price.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between text-base font-bold text-[#0B1B32] pt-3 border-t border-gray-100">
-                    <span>Total</span>
-                    <span>${course.price.toFixed(2)}</span>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-4 flex justify-between items-center mb-8">
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold text-[#0B1B32]">Due now</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] bg-gray-200 text-gray-500 px-1.5 py-0.5 rounded font-bold">USD</span>
-                    <span className="text-lg font-black text-[#0B1B32]">${course.price.toFixed(2)}</span>
-                  </div>
-                </div>
-
-                <button 
-                  disabled={activeStep !== 2}
-                  onClick={() => alert('Purchase successful!')}
-                  className={`w-full py-4 rounded-xl font-bold text-lg shadow-xl transition-all active:scale-95 ${
-                    activeStep === 2 
-                      ? 'bg-[#fa4616] text-white shadow-[#fa4616]/20 hover:bg-[#d43a12]' 
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-gray-200'
-                  }`}
-                >
-                  Pay now
-                </button>
-
-                <p className="mt-6 text-[10px] text-gray-400 text-center leading-relaxed">
-                  By clicking "Pay now" you agree to the <a href="#" className="underline">Terms of Service</a> and <a href="#" className="underline">Privacy Policy</a>
-                </p>
               </div>
             </div>
 
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </>
   );
 };

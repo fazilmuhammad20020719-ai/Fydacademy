@@ -19,7 +19,9 @@ const Home = () => {
       <MailingList />
       <YouTubeSection />
       <JoinCourse />
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 };

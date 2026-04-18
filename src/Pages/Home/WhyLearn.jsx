@@ -23,33 +23,42 @@ const WhyLearn = () => {
   ];
 
   return (
-    <section className="w-full bg-slate-100 pt-12 pb-16">
-      <div className="w-[95%] max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B1B32] text-center mb-12">
-          Why Learn With Us?
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="relative w-full bg-zinc-50 dark:bg-[#050505] pt-24 pb-32 overflow-hidden transition-colors duration-300">
+      {/* Subtle Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#fa4616]/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="relative z-10 w-[95%] max-w-7xl mx-auto">
+        <div className="text-center mb-20 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tighter">
+            Why Learn <span className="text-[#fa4616]">With Us?</span>
+          </h2>
+          <div className="w-20 h-1.5 bg-[#fa4616] mx-auto rounded-full" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {cards.map((card, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 group"
+            <div
+              key={index}
+              className="group relative flex flex-col bg-white dark:bg-zinc-900/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-zinc-200 dark:border-white/5 hover:border-[#fa4616]/30 transition-all duration-500 shadow-2xl"
             >
-              <div className="h-64 w-full overflow-hidden">
-                <img 
-                  src={card.image} 
-                  alt={card.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              <div className="h-64 w-full overflow-hidden relative">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-zinc-950 via-transparent to-transparent opacity-80" />
               </div>
-              <div className="p-8 text-center">
-                <h3 className="text-xl font-bold text-[#0B1B32] mb-4">
+              <div className="p-8 text-center flex flex-col items-center flex-grow">
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-[#fa4616] transition-colors tracking-tight">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                <p className="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed text-sm">
                   {card.description}
                 </p>
               </div>
+              {/* Decorative line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#fa4616] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </div>
           ))}
         </div>
