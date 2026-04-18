@@ -19,6 +19,10 @@ const Checkout = () => {
     <>
       <div className="min-h-screen bg-white dark:bg-black pt-24 pb-20 px-4 md:px-8 relative overflow-hidden transition-colors duration-300">
         <BackgroundLines />
+
+        {/* Gradient Overlay (கருப்பு/வெள்ளை நிழல்) புதிதாக சேர்க்கப்பட்டது */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white dark:from-black dark:via-transparent dark:to-black opacity-90 pointer-events-none transition-all duration-300" />
+
         {/* Glows */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#fa4616]/5 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#fa4616]/5 blur-[120px] pointer-events-none" />
