@@ -77,7 +77,7 @@ const Checkout = () => {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="flex flex-col space-y-2">
                           <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Country</label>
-                          <select className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium appearance-none">
+                          <select className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold appearance-none">
                             <option>Sri Lanka</option>
                             <option>United States</option>
                             <option>United Kingdom</option>
@@ -86,26 +86,26 @@ const Checkout = () => {
                         </div>
                         <div className="flex flex-col space-y-2">
                           <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">State</label>
-                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
+                          <input type="text" className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600" />
                         </div>
                         <div className="flex flex-col space-y-2">
                           <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Postal Code</label>
-                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
+                          <input type="text" className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600" />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="flex flex-col space-y-2">
                           <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">City</label>
-                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
+                          <input type="text" className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600" />
                         </div>
                         <div className="flex flex-col space-y-2">
                           <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Address 1</label>
-                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
+                          <input type="text" className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600" />
                         </div>
                         <div className="flex flex-col space-y-2">
                           <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Address 2</label>
-                          <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
+                          <input type="text" className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600" />
                         </div>
                       </div>
 
@@ -121,11 +121,11 @@ const Checkout = () => {
                           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-4 duration-500">
                             <div className="flex flex-col space-y-2">
                               <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Business Name</label>
-                              <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
+                              <input type="text" className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600" />
                             </div>
                             <div className="flex flex-col space-y-2">
                               <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">VAT / Tax ID</label>
-                              <input type="text" className="bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 transition-all font-medium placeholder-zinc-400" />
+                              <input type="text" className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600" />
                             </div>
                           </div>
                         )}
@@ -195,7 +195,7 @@ const Checkout = () => {
                             <input
                               type="text"
                               placeholder="1234 1234 1234 1234"
-                              className="w-full bg-white border border-zinc-200 rounded-2xl px-6 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 focus:border-transparent transition-all font-medium pr-32 placeholder-zinc-400"
+                              className="w-full bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-6 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold pr-32 placeholder-zinc-400 dark:placeholder-zinc-600"
                             />
                             <div className="absolute right-5 top-1/2 -translate-y-1/2 flex items-center gap-3 grayscale opacity-40">
                               <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 w-auto" />
@@ -211,7 +211,7 @@ const Checkout = () => {
                             <input
                               type="text"
                               placeholder="MM / YY"
-                              className="bg-white border border-zinc-200 rounded-2xl px-6 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 focus:border-transparent transition-all font-medium placeholder-zinc-400"
+                              className="bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-6 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600"
                             />
                           </div>
                           <div className="flex flex-col space-y-2">
@@ -220,7 +220,7 @@ const Checkout = () => {
                               <input
                                 type="text"
                                 placeholder="CVC"
-                                className="w-full bg-white border border-zinc-200 rounded-2xl px-6 py-4 text-black outline-none focus:ring-2 focus:ring-[#fa4616]/50 focus:border-transparent transition-all font-medium pr-12 placeholder-zinc-400"
+                                className="w-full bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-6 py-4 text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold pr-12 placeholder-zinc-400 dark:placeholder-zinc-600"
                               />
                               <div className="absolute right-5 top-1/2 -translate-y-1/2 text-zinc-600">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -264,7 +264,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       placeholder="Discount code"
-                      className="flex-grow bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-sm text-black outline-none focus:ring-2 focus:ring-[#fa4616]/30 transition-all font-medium placeholder-zinc-400"
+                      className="flex-grow bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/5 rounded-2xl px-5 py-4 text-sm text-zinc-900 dark:text-white outline-none focus:ring-4 focus:ring-[#fa4616]/10 focus:border-[#fa4616] transition-all font-bold placeholder-zinc-400 dark:placeholder-zinc-600"
                     />
                     <button className="px-6 py-4 text-xs font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-600 bg-zinc-100 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/5 rounded-2xl cursor-not-allowed transition-colors">
                       Apply
