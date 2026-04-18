@@ -1,24 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/Logo.svg';
+import logoDark from '../../assets/Logo.svg';
+import logoLight from '../../assets/Logo-Light.svg';
 import BackgroundLines from '../../components/BackgroundLines';
+import { useTheme } from '../../context/ThemeContext';
 
 const Register = () => {
+  const { theme } = useTheme();
   return (
     <div className="min-h-screen bg-white dark:bg-black flex flex-col justify-center py-20 px-6 lg:px-8 relative transition-colors duration-300">
       <BackgroundLines />
 
-      {/* Decorative Glows */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#fa4616]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#fa4616]/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Gradient Overlay (கருப்பு/வெள்ளை நிழல்) புதிதாக சேர்க்கப்பட்டது */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white dark:from-black dark:via-transparent dark:to-black opacity-90 pointer-events-none transition-all duration-300" />
+
+      {/* Radial Gradient Overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none transition-opacity duration-500"
+        style={{
+          background: `radial-gradient(circle at center, ${theme === 'dark' ? 'rgba(250, 70, 22, 0.12)' : 'rgba(250, 70, 22, 0.05)'
+            } 0%, transparent 70%)`
+        }}
+      />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10">
         <Link to="/" className="flex justify-center mb-6 group">
           <div className="relative">
             <div className="absolute -inset-4 bg-[#fa4616]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <img
-              className="h-10 w-auto transform scale-[2.2] relative z-10"
-              src={logo}
+              className="h-10 w-auto transform scale-[2.2] relative z-10 transition-all duration-300"
+              src={theme === 'dark' ? logoDark : logoLight}
               alt="FYD Academy"
             />
           </div>

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/Logo.svg';
+import logoDark from '../assets/Logo.svg';
+import logoLight from '../assets/Logo-Light.svg';
 import { useTheme } from '../context/ThemeContext';
 import { Settings, Sun, Moon } from 'lucide-react';
 import { useState } from 'react';
@@ -23,7 +24,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo part */}
         <Link to="/" className="flex items-center cursor-pointer">
-          <img src={logo} alt="FYD Academy Logo" className="h-10 w-auto transform scale-[2] origin-left" />
+          <img
+            src={theme === 'dark' ? logoDark : logoLight}
+            alt="FYD Academy Logo"
+            className="h-10 w-auto transform scale-[2] origin-left transition-all duration-300"
+          />
         </Link>
 
         {/* Nav Links & Login Button */}
