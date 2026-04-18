@@ -61,13 +61,26 @@ const CourseSection = () => {
             <span className="italic font-light">for Editors</span>
           </h2>
 
-          <div className="flex items-center gap-3">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-black bg-zinc-800" />
+          <div className="flex items-center gap-5">
+            <div className="flex -space-x-4">
+              {[
+                'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop'
+              ].map((src, i) => (
+                <div key={src} className="w-12 h-12 rounded-full border-4 border-white dark:border-black bg-zinc-800 overflow-hidden relative z-[10] shadow-xl group/avatar transition-transform hover:scale-110 hover:z-[20]">
+                  <img src={src} alt="Student" className="w-full h-full object-cover grayscale-[0.2] group-hover/avatar:grayscale-0 transition-all duration-300" />
+                </div>
               ))}
+              <div className="w-12 h-12 rounded-full border-4 border-white dark:border-black bg-zinc-900 flex items-center justify-center text-[11px] font-black text-[#fa4616] relative z-[9] shadow-xl">
+                +10k
+              </div>
             </div>
-            <span className="text-zinc-500 text-sm font-bold">57+ Professional Lessons</span>
+            <div className="flex flex-col">
+              <span className="text-zinc-900 dark:text-white text-sm font-black tracking-tight transition-colors">57+ Professional Lessons</span>
+              <span className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Join our community</span>
+            </div>
           </div>
 
           <p className="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed text-lg max-w-xl transition-colors">
