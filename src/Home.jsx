@@ -6,6 +6,7 @@ import MailingList from './Pages/Home/MailingList';
 import YouTubeSection from './Pages/Home/YouTubeSection';
 import JoinCourse from './Pages/Home/JoinCourse';
 import Footer from './components/Footer';
+import ScrollReveal from './components/ScrollReveal';
 
 
 const Home = () => {
@@ -13,12 +14,24 @@ const Home = () => {
     <div className="relative w-full">
 
       <Hero />
-      <WhyLearn />
-      <CourseSection />
-      <MeetTheTeam />
-      <MailingList />
-      <YouTubeSection />
-      <JoinCourse />
+      <ScrollReveal delay={0.1}>
+        <WhyLearn />
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <CourseSection />
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <MeetTheTeam />
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <MailingList />
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <YouTubeSection />
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <JoinCourse />
+      </ScrollReveal>
       <div className="relative z-10">
         <Footer />
       </div>

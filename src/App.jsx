@@ -7,8 +7,8 @@ import Register from './Pages/Auth/Register';
 import Checkout from './Pages/Checkout/Checkout';
 import Curriculum from './Pages/Curriculum/Curriculum';
 import Navbar from './components/Navbar';
+import PageTransition from './components/PageTransition';
 import { ThemeProvider } from './context/ThemeContext';
-
 
 function App() {
   return (
@@ -18,13 +18,13 @@ function App() {
           <Navbar />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/curriculum" element={<Curriculum />} />
+              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+              <Route path="/courses" element={<PageTransition><Courses /></PageTransition>} />
+              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+              <Route path="/login" element={<PageTransition><Login /></PageTransition>} />
+              <Route path="/register" element={<PageTransition><Register /></PageTransition>} />
+              <Route path="/checkout" element={<PageTransition><Checkout /></PageTransition>} />
+              <Route path="/curriculum" element={<PageTransition><Curriculum /></PageTransition>} />
             </Routes>
           </main>
         </div>
